@@ -1,0 +1,31 @@
+GET http://localhost/ HTTP/1.1
+
+###
+
+GET http://localhost/version HTTP/1.1
+
+###
+
+POST http://localhost/limits HTTP/1.1
+content-type: application/json
+
+{
+    [
+        {
+            "src": "t2.micro",
+            "dst": "t3.micro"
+        }
+    ]
+}
+
+###
+
+POST http://10.24.81.8:5000/api/v0.1/us-east-1a/data
+content-type: application/json
+
+{
+    "links": [
+        ["m6g-4xlarge", "m5-xlarge"],
+        ["m5a-xlarge", "m5-8xlarge"]
+    ]
+}
